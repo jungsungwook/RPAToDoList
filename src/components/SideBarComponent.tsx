@@ -1,4 +1,5 @@
 import { useState, useEffect, Fragment } from "react";
+import styled from "styled-components";
 import MenuButtonComponent from "./MenuButtonComponent";
 
 const SideBarComponent = () => {
@@ -10,8 +11,28 @@ const SideBarComponent = () => {
         {
             id: "1",
             text: "About",
+        },
+        {
+            id: "2",
+            text: "Contact",
+        },
+        {
+            id: "3",
+            text: "Settings",
+        },
+        {
+            id: "4",
+            text: "몰루",
         }
     ];
+
+    const MenuContainer = styled.div`
+        display: flex;
+        flex-direction: column;
+        background-color: #000;
+        border-radius: 0.6rem;
+    `;
+
     const [currentMenu, setCurrentMenu] = useState(MenuList[0].id);
 
     const onClickMenu = (id: string) => {
@@ -30,9 +51,9 @@ const SideBarComponent = () => {
         });
     }, [currentMenu]);
     
-    return (
+    return ( 
         <Fragment>
-            <div className="menu">
+            <MenuContainer className="menu__container">
                 {MenuList.map((menu) => (
                     <MenuButtonComponent
                         id = {menu.id}
@@ -40,7 +61,7 @@ const SideBarComponent = () => {
                         onClick = {() => onClickMenu(menu.id)}
                     />
                 ))}
-            </div>
+            </MenuContainer>
         </Fragment>
     );
 };
