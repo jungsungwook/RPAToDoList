@@ -4,7 +4,6 @@ const MenuButtonComponent = (props: any) => {
     const DefaultButton = styled.button`
         background-color: #000;
         border: none;
-        border-radius: 0.5rem;
         color: #fff;
         cursor: pointer;
         font-size: 1.5rem;
@@ -12,7 +11,6 @@ const MenuButtonComponent = (props: any) => {
         margin: 0rem 0;
         padding: 0.5rem 0rem;
         text-align: left;
-        width: 20%;
         &:hover {
             background-color: #fff;
             color: #000;
