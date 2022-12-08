@@ -1,8 +1,12 @@
+import React, { Fragment } from 'react';
+import MenuButtonComponent from '../components/MenuButtonComponent';
+import SideBarComponent from '../components/SideBarComponent';
 function Home() {
     return (
-        <div>
-            <h1>Homes</h1>
-        </div>
+        <Fragment>
+            <SideBarComponent />
+        </Fragment>
+        
     );
 }
 
