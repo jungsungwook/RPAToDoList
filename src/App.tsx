@@ -1,4 +1,4 @@
-
+/* eslint-disable */
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import SideBarComponent from './components/SideBarComponent';
@@ -46,7 +46,11 @@ function App(){
                 menuList={menuList}
                 changeState={changeState}
                 />
-            <Router />
+            <Router
+                currentMenu={currentMenu}
+                menuList={menuList}
+                changeState={changeState}
+            />
         </MenuContainer>
     );
 

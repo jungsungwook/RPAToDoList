@@ -1,4 +1,5 @@
-import { useState, useEffect, Fragment } from "react";
+/* eslint-disable */
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import MenuButtonComponent from "./MenuButtonComponent";
 
@@ -28,7 +29,7 @@ const SideBarComponent = (props: any) => {
     }, [props.currentMenu]);
     
     return ( 
-        <Fragment>
+        <>
             <MenuContainer className="menu__container">
                 {props.menuList.map((menu:any) => (
                     <MenuButtonComponent
@@ -38,7 +39,7 @@ const SideBarComponent = (props: any) => {
                     />
                 ))}
             </MenuContainer>
-        </Fragment>
+        </>
     );
 };
 
