@@ -1,9 +1,8 @@
 /* eslint-disable */
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import TemplateContainer from '../components/TemplateContainer';
 
-function Home(props: any) {
+function Monitoring(props: any) {
 
     useEffect(() => {
         console.log(props.currentMenu);
@@ -11,10 +10,12 @@ function Home(props: any) {
 
     return (
         <>
-            <TemplateContainer />
+            <div>
+                <h1>Monitoring</h1>
+            </div>
         </>
         
     );
 }
 
-export default Home;
+export default Monitoring;

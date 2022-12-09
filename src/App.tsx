@@ -1,56 +1,70 @@
 /* eslint-disable */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter, Routes } from 'react-router-dom';
 import styled from 'styled-components';
 import SideBarComponent from './components/SideBarComponent';
 import Router from './Router';
-
-function App(){
-    const MenuContainer = styled.div`
+const MenuContainer = styled.div`
         display: flex;
         flex-direction: row;
         height: 100vh;
         width: 100%;
         `;
+function App(){
+    
     const menuList = [
         {
             id: "0",
-            text: "　Red",
+            text: "　HOME",
+            path: "/home",
         },
         {
             id: "1",
-            text: "　Green　　",
+            text: "　주간 보고　",
+            path: "/weekly",
         },
         {
             id: "2",
-            text: "　Blue",
+            text: "　월간 보고",
+            path: "/monthly",
         },
         {
             id: "3",
-            text: "　Black",
+            text: "　BackUp",
+            path: "/backup",
         },
         {
             id: "4",
+            text: "　모니터링",
+            path: "/monitoring",
+        },
+        {
+            id: "5",
             text: "　White",
         }
     ];
 
     const [currentMenu, setCurrentMenu] = useState(menuList[0].id);
     const changeState = (id: string) => {
-    setCurrentMenu(id);
+        setCurrentMenu(id);
     };
-    
+    useEffect(() => {
+        console.log(currentMenu);
+    }, [currentMenu]);
     return(
         <MenuContainer className="menu">
-            <SideBarComponent 
-                currentMenu={currentMenu}
-                menuList={menuList}
-                changeState={changeState}
+            <BrowserRouter>
+                <SideBarComponent 
+                    currentMenu={currentMenu}
+                    menuList={menuList}
+                    changeState={changeState}
                 />
-            <Router
-                currentMenu={currentMenu}
-                menuList={menuList}
-                changeState={changeState}
-            />
+                <Router
+                    currentMenu={currentMenu}
+                    menuList={menuList}
+                    changeState={changeState}
+                    />
+            </BrowserRouter>
         </MenuContainer>
     );
 

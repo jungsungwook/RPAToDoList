@@ -1,19 +1,18 @@
 /* eslint-disable */
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import MenuButtonComponent from "./MenuButtonComponent";
-
-const SideBarComponent = (props: any) => {
-
-    const MenuContainer = styled.div`
+const MenuContainer = styled.div`
         display: flex;
         flex-direction: column;
         background-color: #000;
     `;
-
+const SideBarComponent = (props: any) => {
 
     const onClickMenu = (id: string) => {
         props.changeState(id);
+        history.pushState(null, "", props.menuList[id].path);
     };
 
     useEffect(() => {
@@ -31,12 +30,16 @@ const SideBarComponent = (props: any) => {
     return ( 
         <>
             <MenuContainer className="menu__container">
-                {props.menuList.map((menu:any) => (
-                    <MenuButtonComponent
-                        id = {menu.id}
-                        text = {menu.text}
-                        onClick = {() => onClickMenu(menu.id)}
-                    />
+                {props.menuList.map((menu: any) => (
+                    <Link to={menu.path} key={menu.id}>
+                        <MenuButtonComponent
+                            key={menu.id}
+                            id={menu.id}
+                            text={menu.text}
+                            onClick={() => onClickMenu(menu.id)}
+                            path={menu.path}
+                        />
+                    </Link>
                 ))}
             </MenuContainer>
         </>
