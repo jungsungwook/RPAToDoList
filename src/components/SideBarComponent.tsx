@@ -2,15 +2,18 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import MenuButtonComponent from "./MenuButtonComponent";
+import ButtonComponent from "./ButtonComponent";
 const MenuContainer = styled.div`
+        position: fixed;
         display: flex;
+        flex: 1;
+        height: 100%;
         flex-direction: column;
         background-color: #000;
     `;
 const SideBarComponent = (props: any) => {
 
-    const onClickMenu = (id: string) => {
+    const OnClickMenu = (id: string) => {
         props.changeState(id);
         history.pushState(null, "", props.menuList[id].path);
     };
@@ -32,11 +35,11 @@ const SideBarComponent = (props: any) => {
             <MenuContainer className="menu__container">
                 {props.menuList.map((menu: any) => (
                     <Link to={menu.path} key={menu.id}>
-                        <MenuButtonComponent
+                        <ButtonComponent
                             key={menu.id}
                             id={menu.id}
                             text={menu.text}
-                            onClick={() => onClickMenu(menu.id)}
+                            onClick={() => OnClickMenu(menu.id)}
                             path={menu.path}
                         />
                     </Link>

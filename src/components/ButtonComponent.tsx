@@ -22,7 +22,7 @@ const DefaultButton = styled.button`
             color: #000;
         }
     `;
-const MenuButtonComponent = (props: any) => {
+const ButtonComponent = (props: any) => {
     return (
             <DefaultButton 
                 className="menu__button" 
@@ -33,4 +33,4 @@ const MenuButtonComponent = (props: any) => {
             </DefaultButton>
     );
 };
-export default MenuButtonComponent;
+export default ButtonComponent;

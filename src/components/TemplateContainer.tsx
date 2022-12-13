@@ -20,9 +20,6 @@ function TemplateContainer(props: any) {
     return (
         <>
             <TempContainer >
-                <div>
-                    <h1>Template Container</h1>
-                </div>
             </TempContainer>
         </>
         

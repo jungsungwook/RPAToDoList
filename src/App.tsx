@@ -10,6 +10,15 @@ const MenuContainer = styled.div`
         height: 100vh;
         width: 100%;
         `;
+const RightContainer = styled.div`
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        background-color: white;
+        height: min-height;
+        min-width: 100px;
+        padding: 0 0 0 9.5rem;
+        `;
 function App(){
     
     const menuList = [
@@ -59,11 +68,13 @@ function App(){
                     menuList={menuList}
                     changeState={changeState}
                 />
-                <Router
-                    currentMenu={currentMenu}
-                    menuList={menuList}
-                    changeState={changeState}
-                    />
+                <RightContainer className="main">
+                    <Router
+                        currentMenu={currentMenu}
+                        menuList={menuList}
+                        changeState={changeState}
+                        />
+                </RightContainer>
             </BrowserRouter>
         </MenuContainer>
     );
