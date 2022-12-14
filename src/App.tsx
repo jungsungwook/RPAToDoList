@@ -47,10 +47,6 @@ function App(){
             text: "　모니터링",
             path: "/monitoring",
         },
-        {
-            id: "5",
-            text: "　White",
-        }
     ];
 
     const [currentMenu, setCurrentMenu] = useState(menuList[0].id);
