@@ -58,7 +58,7 @@ function App(){
         setCurrentMenu(id);
     };
     useEffect(() => {
-        console.log(currentMenu);
+        
     }, [currentMenu]);
     return(
         <MenuContainer className="menu">

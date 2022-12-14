@@ -49,6 +49,8 @@ function Home(props: any) {
             subject: subject,
             context: context,
             date: new Date().toLocaleString(),
+            isDone: false,
+            doneDate: '',
         };
         
         prevData.push(data);
@@ -63,7 +65,7 @@ function Home(props: any) {
     };
 
     useEffect(() => {
-        console.log(props.currentMenu);
+        
     }, [props.currentMenu]);
 
     return (
@@ -86,11 +88,11 @@ function Home(props: any) {
                 />
                 <HorizontalContainer className='button__container'>
                     <ButtonComponent
-                        text='저장'
+                        btnText='저장'
                         onClick={FastSave}
                     />
                     <ButtonComponent
-                        text='취소'
+                        btnText='취소'
                         // onClick={() => console.log('취소')}
                     />
                 </HorizontalContainer>

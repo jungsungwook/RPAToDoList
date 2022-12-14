@@ -38,7 +38,7 @@ const SideBarComponent = (props: any) => {
                         <ButtonComponent
                             key={menu.id}
                             id={menu.id}
-                            text={menu.text}
+                            btnText={menu.text}
                             onClick={() => OnClickMenu(menu.id)}
                             path={menu.path}
                         />
