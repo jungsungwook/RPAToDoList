@@ -19,7 +19,7 @@ const ListContainer = styled.div`
     align-items: center;
 `;
 
-const ListComponent = (props: any) => {
+const FastMemoListComponent = (props: any) => {
 
     useEffect(() => {
 
@@ -91,4 +91,4 @@ const ListComponent = (props: any) => {
     );
 };
 
-export default ListComponent;
+export default FastMemoListComponent;
