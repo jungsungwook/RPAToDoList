@@ -9,7 +9,7 @@ function createWindow () {
         nodeIntegration: true
     }
     })
-    process.env.REACT_APP_ENV === 'development' ? win.loadURL('http://localhost:3000') : win.loadFile('./public/index.html')
+    process.env.REACT_APP_ENV === 'development' ? win.loadURL('http://localhost:3000') : win.loadFile(path.join(__dirname, './index.html'))
 
     // Open the DevTools.
     win.webContents.openDevTools()
